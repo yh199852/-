@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>相片盒子</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        background-color: #f35353AF;
+    }
+
+    .outer {
+        height: 2000px;
+    }
+
+    .container {
+        width: 300px;
+        height: 300px;
+        margin: 150px auto;
+        perspective: 20000px;
+    }
+
+    .box {
+        width: 300px;
+        height: 300px;
+        animation: box 6s linear infinite;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .boxPage {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        transform-style: preserve-3d;
+    }
+
+    .top {
+        transform: translateZ(150px);
+    }
+
+    .bottom {
+        transform: translateZ(-150px) rotateX(180deg);
+    }
+
+    .left {
+        transform: translateX(-150px) rotateY(-90deg);
+    }
+
+    .right {
+        transform: translateX(150px) rotateY(90deg);
+    }
+
+    .before {
+        transform: translateY(150px) rotateX(-90deg);
+    }
+
+    .behind {
+        transform: translateY(-150px) rotateX(90deg);
+    }
+
+
+    @keyframes box {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+
+        100% {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+    }
+
+    @keyframes pageBox {
+        0% {
+            transform: translateZ(0) scale(1) rotateZ(0deg);
+        }
+
+        20% {
+            transform: translateZ(300px) scale(0) rotateZ(600deg);
+        }
+
+        50% {
+            transform: translate(600px) scale(0.5) rotateZ(800deg);
+        }
+
+        80% {
+            transform: translate(300px) scale(0) rotateZ(600px);
+        }
+
+        100% {
+            transform: translateZ(0) scale(1) rotateZ(0deg);
+        }
+    }
+
+    .smBox {
+        position: absolute;
+        background: url("images/素材.jpg") no-repeat;
+    }
+
+    .boxPage .smBox:nth-child(1) {
+        animation: pageBox 4.5s ease-in;
+    }
+
+    .boxPage .smBox:nth-child(2) {
+        animation: pageBox 4.5s ease-in 0.5s;
+    }
+
+    .boxPage .smBox:nth-child(3) {
+        animation: pageBox 4.5s ease-in 1s;
+    }
+
+    .boxPage .smBox:nth-child(4) {
+        animation: pageBox 4.5s ease-in 1.5s;
+    }
+
+    .boxPage .smBox:nth-child(5) {
+        animation: pageBox 4.5s ease-in 2s;
+    }
+
+    .boxPage .smBox:nth-child(6) {
+        animation: pageBox 4.5s ease-in 2.5s;
+    }
+
+    .boxPage .smBox:nth-child(7) {
+        animation: pageBox 4.5s ease-in 3s;
+    }
+
+    .boxPage .smBox:nth-child(8) {
+        animation: pageBox 4.5s ease-in 3.5s;
+    }
+
+    .boxPage .smBox:nth-child(9) {
+        animation: pageBox 4.5s ease-in 4s;
+    }
+</style>
+
+<body>
+    <div class="outer">
+        <div class="header">zzz</div>
+        <div class="container">
+            <div class="box">
+                <div class="boxPage top"></div>
+                <div class="boxPage bottom"></div>
+                <div class="boxPage left"></div>
+                <div class="boxPage right"></div>
+                <div class="boxPage before"></div>
+                <div class="boxPage behind"></div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+
+
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            var pages = $(".boxPage");
+            pages.each(function (index, ele) {
+                for (var row = 0; row < 3; row++) {
+                    for (var col = 0; col < 3; col++) {
+                        // var n = 0
+                        var divStr = "<div class=smBox></div>";
+                        $(pages[index]).append(divStr)
+                        var preSmBox = $(".smBox").last()
+                        console.log(preSmBox)
+                        preSmBox.css({
+                            "width": 100 + "px",
+                            "height": 100 + "px",
+                            "left": (col * 100) + "px",
+                            "top": (row * 100) + "px",
+                            "background-size": 300 + "px",
+                            "background-position-X": -(col * 100) + "px",
+                            "background-position-Y": -(row * 100) + "px",
+                        })
+                        // n++;
+
+                    }
+                }
+            })
+
+        });
+    </script>
+</body>
+
+</html>

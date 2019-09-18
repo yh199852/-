@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>美食网站</title>
+</head>
+<link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        background: url("images/bj.png") repeat;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    .search {
+        width: 100%;
+        margin: auto;
+        border: 1px solid #d2cdca;
+        padding-bottom: 20px;
+    }
+
+    .search .search-input {
+        margin-top: 40px;
+        border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+    }
+
+    .search h3 {
+        margin-top: 15px;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .search .search-input i {
+        position: absolute;
+        right: 25px;
+        top: 10px;
+    }
+
+    .search .search-tel {
+        height: 120px;
+        line-height: 120px;
+    }
+
+    .search .search-tel i {
+        margin-right: 10px;
+    }
+
+    .search .blockquote {
+        margin-top: 30px;
+        margin-left: 30px;
+        line-height: 2;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .product h2 {
+        line-height: 50px;
+        height: 50px;
+        font-size: 24px;
+        border-bottom: 2px solid #d2cdca;
+        padding-top: 20px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .product h2 span {
+        background: url("images/bj.png");
+        padding: 0 15px;
+    }
+
+    .product .product-title {
+        position: relative;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    .product img {
+        width: 100%;
+    }
+
+    .image-item {
+        margin: 0;
+    }
+
+    #video {
+        width: 100%;
+        height: 190px;
+        margin: 10px auto 0;
+    }
+
+    .media img {
+        height: 60px;
+        width: 60px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .footer {
+        background: url("images/footerBj.jpg") no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 360px;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .footer .overlay {
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    .footer .footer-content {
+        position: relative;
+        top: 30px;
+        background: #f1f1f1;
+        padding-top: 20px;
+        line-height: 30px;
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container"><a class="navbar-brand" href="#">轻实训-美食网</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">主页 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">最新产品</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            美味蛋糕
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">xxxxx</a>
+                            <a class="dropdown-item" href="#">xxxxx</a>
+                            <a class="dropdown-item" href="#">xxxxxx</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">新品上市</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">客户点评</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">美食故事</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/carousel1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel3.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container search">
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="mb-0">世间唯有美食不可辜负</p>
+                    <footer class="blockquote-footer">美食网
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 search-input">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="form-control" type="text" placeholder="请输入你感兴趣的内容...">
+                <h3>关键字：xxx，xxx，xxx....</h3>
+            </div>
+            <div class="col-md-4 search-tel">
+                <i class="fa fa-phone" aria-hidden="true"></i><span>联系电话：0713xxxxxxxxxx</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="product">
+            <h2 class="text-center"><span>最新产品</span></h2>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="img-thumbnail">
+                        <img src="images/cake1.jpg" alt="" srcset="">
+                        <div class="product-title">古早味的绿豆糕</div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="img-thumbnail">
+                        <img src="images/cake2.jpg" alt="" srcset="">
+                        <div class="product-title">古早味的绿豆糕</div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="img-thumbnail">
+                        <img src="images/cake3.jpg" alt="" srcset="">
+                        <div class="product-title">古早味的绿豆糕</div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="img-thumbnail">
+                        <img src="images/cake4.jpg" alt="" srcset="">
+                        <div class="product-title">古早味的绿豆糕</div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="img-thumbnail">
+                        <img src="images/cake5.jpg" alt="" srcset="">
+                        <div class="product-title">古早味的绿豆糕</div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="img-thumbnail">
+                        <img src="images/cake6.jpg" alt="" srcset="">
+                        <div class="product-title">古早味的绿豆糕</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product container">
+        <h2 class="title"><span>美味蛋糕</span></h2>
+        <div class="row">
+            <div class="col-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                        aria-controls="v-pills-home" aria-selected="true">生日蛋糕</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                        aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                        aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+                        aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="row">
+                            <div class="col-6 col-sm-3">
+                                <div class="img-thumbnail">
+                                    <img src="images/pic1.jpg" alt="" srcset="">
+                                    <div class="product-title">古早味的绿豆糕</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="img-thumbnail">
+                                    <img src="images/pic1.jpg" alt="" srcset="">
+                                    <div class="product-title">古早味的绿豆糕</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="img-thumbnail">
+                                    <img src="images/pic1.jpg" alt="" srcset="">
+                                    <div class="product-title">古早味的绿豆糕</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="img-thumbnail">
+                                    <img src="images/pic1.jpg" alt="" srcset="">
+                                    <div class="product-title">古早味的绿豆糕</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="img-thumbnail">
+                                    <img src="images/pic1.jpg" alt="" srcset="">
+                                    <div class="product-title">古早味的绿豆糕</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        ...</div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        ...</div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        ...</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="list-group mt-5">
+                <div class="list-group-item active">新品上市</div>
+                <div class="row image-item">
+                    <div class="col-sm-8">
+                        <div class="list-group-item">
+                            <h4>风味多样</h4>
+                            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            </p>
+                        </div>
+                        <div class="list-group-item">
+                            <h4>风味多样</h4>
+                            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            </p>
+                        </div>
+                        <div class="list-group-item">
+                            <h4>风味多样</h4>
+                            <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 row ">
+                        <div class="col-sm-6 mt-5">
+                            <img src="images/pic5.jpg" class="img-thumbnail">
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <img src="images/pic5.jpg" class="img-thumbnail">
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <img src="images/pic5.jpg" class="img-thumbnail">
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <img src="images/pic5.jpg" class="img-thumbnail">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <h2 class="title">
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="popover" data-placement="top"
+                    title="Popover title" data-content="温馨提示（请查看底部联系方式）">马上订购</button>
+            </h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <video src="images/video.mp4" id="video" controls></video>
+                    <div class="media">
+                        <div class="media-body">
+                            <h5 class="mt-3">美味时刻</h5>
+                            好吃就完事儿了铁汁，评论框
+                        </div>
+                    </div>
+                    <div class="media">
+                        <img src="images/img1.jpg" class="mr-3 rounded-circle" alt="...">
+                        <div class="media-body">
+                            <h5 class="mt-3">点赞</h5>
+                            吃了浑身都是劲，给力ヾ(≧O≦)〃嗷~
+                            <div class="media mt-3">
+                                <a class="mr-3" href="#">
+                                    <img src="images/img1.jpg" class="mr-3 rounded-circle" alt="...">
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="mt-0">继续点赞</h5>
+                                    奥利给，老铁双击666
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/pic1.jpg" class="img-thumbnail" alt="">
+                </div>
+                <div class="col-sm-4">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h3 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                    </button>
+                                </h3>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h3 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h3 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </button>
+                                </h3>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button trigger modal -->
+            <h2 class="title"><button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#exampleModal">
+                    点击评论
+                </button></h2>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">评论窗</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            评论就完事儿了
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
+                            <button type="button" class="btn btn-primary">评论</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-sm-3">
+                    <img src="images/logo.png" alt="">
+                    <span>实训在线-美食网</span>
+                    <img src="images/weibo.png" class="img-rounded" alt="">
+                    <span>扫一扫关注我们</span>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <ul class="col-sm-3">
+                            <li>网站首页</li>
+                            <li>最新产品</li>
+                            <li>美味蛋糕</li>
+                            <li>新品上市</li>
+                        </ul>
+                        <ul class="col-sm-3">
+                            <li>网站首页</li>
+                            <li>最新产品</li>
+                            <li>美味蛋糕</li>
+                            <li>新品上市</li>
+                        </ul>
+                        <ul class="col-sm-3">
+                            <li>网站首页</li>
+                            <li>最新产品</li>
+                            <li>美味蛋糕</li>
+                            <li>新品上市</li>
+                        </ul>
+                        <ul class="col-sm-3">
+                            <li>网站首页</li>
+                            <li>最新产品</li>
+                            <li>美味蛋糕</li>
+                            <li>新品上市</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <address class="col-sm-12">
+                            <strong>实训在线-美食网</strong><br>公司地址：湖北武汉<br><abbr>联系电话：xxxxxxxxxx</abbr><br>技术支持：武汉明博科技有限公司<br><a
+                                href="mailto:#">电子邮箱：xxxxxxxxx</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="jQuery 3.4.1.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+
+        });
+    </script>
+</body>
+
+</html>
